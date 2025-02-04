@@ -30,12 +30,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          if [[ "$RUNNER_OS" == "Windows" ]]; then
-            Remove-Item -Recurse -Force node_modules, package-lock.json
-          else
-            rm -rf node_modules package-lock.json
-          fi
-          npm install
+         if [[ "$RUNNER_OS" == "Windows" ]]; then
+          rmdir /s /q node_modules 2>nul || true
+          del /f /q package-lock.json 2>nul || true
+         else
+           rm -rf node_modules package-lock.json
+         fi
+        npm install
         shell: bash
 
       - name: Testing on OS (${{ matrix.os }}) with Node.js (version ${{ matrix.node-version }}) attempt ${{ matrix.attempt }}
