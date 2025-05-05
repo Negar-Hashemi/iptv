@@ -37,4 +37,4 @@ jobs:
         run: |
           echo "Run attempt: ${{ matrix.attempt }}"
           echo "Browser: ${{ matrix.browser }}"
-          npx jest --browser=${{ matrix.browser }}
+          npx jest
