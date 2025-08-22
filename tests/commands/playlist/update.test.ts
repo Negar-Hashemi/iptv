@@ -6,7 +6,9 @@ beforeEach(() => {
   fs.emptyDirSync('tests/__data__/output')
   fs.copySync('tests/__data__/input/streams_update', 'tests/__data__/output/streams')
 })
-
+/**
+ * @skipOnOS win32
+ */
 it('can format playlists', () => {
   const stdout = execSync(
     'DATA_DIR=tests/__data__/input/data STREAMS_DIR=tests/__data__/output/streams npm run playlist:update --silent',

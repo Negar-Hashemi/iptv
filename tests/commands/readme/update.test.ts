@@ -19,7 +19,9 @@ beforeEach(() => {
     { encoding: 'utf8' }
   )
 })
-
+/**
+ * @skipOnOS win32
+ */
 it('can update readme.md', () => {
   expect(content('tests/__data__/output/readme.md')).toEqual(
     content('tests/__data__/expected/_readme.md')

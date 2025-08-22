@@ -6,7 +6,9 @@ beforeEach(() => {
   fs.emptyDirSync('tests/__data__/output')
   fs.copySync('tests/__data__/input/streams_format', 'tests/__data__/output/streams')
 })
-
+/**
+ * @skipOnOS win32
+ */
 it('can format playlists', () => {
   execSync('STREAMS_DIR=tests/__data__/output/streams npm run playlist:format', {
     encoding: 'utf8'

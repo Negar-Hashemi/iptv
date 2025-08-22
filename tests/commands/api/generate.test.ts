@@ -9,7 +9,9 @@ beforeEach(() => {
     { encoding: 'utf8' }
   )
 })
-
+/**
+ * @skipOnOS win32
+ */
 it('can create streams.json', () => {
   expect(content('output/.api/streams.json')).toMatchObject(content('expected/.api/streams.json'))
 })

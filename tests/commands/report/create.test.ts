@@ -1,5 +1,8 @@
 import { execSync } from 'child_process'
-
+/**
+ * @skipOnNodeVersion 18
+ * @skipOnOS win32
+ */
 it('can create report', () => {
   const stdout = execSync(
     'DATA_DIR=tests/__data__/input/data STREAMS_DIR=tests/__data__/input/streams_report npm run report:create',

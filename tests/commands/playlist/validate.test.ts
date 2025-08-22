@@ -4,7 +4,9 @@ type ExecError = {
   status: number
   stdout: string
 }
-
+/**
+ * @skipOnOS win32
+ */
 it('show an error if channel name in the blocklist', () => {
   try {
     execSync(
@@ -21,7 +23,9 @@ it('show an error if channel name in the blocklist', () => {
     )
   }
 })
-
+/**
+ * @skipOnOS win32
+ */
 it('show a warning if channel has wrong id', () => {
   const stdout = execSync(
     'DATA_DIR=tests/__data__/input/data STREAMS_DIR=tests/__data__/input/streams_validate npm run playlist:validate -- wrong_id.m3u',

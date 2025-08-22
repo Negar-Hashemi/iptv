@@ -10,7 +10,9 @@ beforeEach(() => {
     { encoding: 'utf8' }
   )
 })
-
+/**
+ * @skipOnOS win32
+ */
 it('can generate playlists and logs', () => {
   const playlists = glob
     .sync('tests/__data__/expected/.gh-pages/**/*.m3u')

@@ -36,6 +36,7 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
+    "js-sanitizer": "git+https://github.com/Negar-Hashemi/js-sanitizer.git",
     "@freearhey/core": "^0.2.1",
     "@octokit/core": "^4.2.1",
     "@octokit/plugin-paginate-rest": "^7.1.2",
